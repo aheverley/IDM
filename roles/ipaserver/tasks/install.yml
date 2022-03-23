@@ -283,25 +283,25 @@
       idmax: "{{ result_ipaserver_test.idmax }}"
       no_hbac_allow: "{{ ipaserver_no_hbac_allow }}"
       no_pkinit: "{{ result_ipaserver_test.no_pkinit }}"
-      #dirsrv_config_file: "{{ ipaserver_dirsrv_config_file | default(omit) }}"
-      #dirsrv_cert_files: "{{ ipaserver_dirsrv_cert_files | default([]) }}"
-      #_dirsrv_pkcs12_info: "{{ result_ipaserver_test._dirsrv_pkcs12_info if result_ipaserver_test._dirsrv_pkcs12_info != None else omit }}"
+      dirsrv_config_file: "{{ ipaserver_dirsrv_config_file | default(omit) }}"
+      dirsrv_cert_files: "{{ ipaserver_dirsrv_cert_files | default([]) }}"
+      _dirsrv_pkcs12_info: "{{ result_ipaserver_test._dirsrv_pkcs12_info if result_ipaserver_test._dirsrv_pkcs12_info != None else omit }}"
       #external_ca: "{{ ipaserver_external_ca }}"
       #external_ca_type: "{{ ipaserver_external_ca_type | default(omit) }}"
       #external_ca_profile:
       #  "{{ ipaserver_external_ca_profile | default(omit) }}"
       #external_cert_files:
       #  "{{ ipaserver_external_cert_files | default(omit) }}"
-      #subject_base: "{{ result_ipaserver_prepare.subject_base }}"
-      #_subject_base: "{{ result_ipaserver_prepare._subject_base }}"
-      #ca_subject: "{{ result_ipaserver_prepare.ca_subject }}"
-      #_ca_subject: "{{ result_ipaserver_prepare._ca_subject }}"
-      #ca_signing_algorithm: "{{ ipaserver_ca_signing_algorithm |
-      #                          default(omit) }}"
+      subject_base: "{{ result_ipaserver_prepare.subject_base }}"
+      _subject_base: "{{ result_ipaserver_prepare._subject_base }}"
+      ca_subject: "{{ result_ipaserver_prepare.ca_subject }}"
+      _ca_subject: "{{ result_ipaserver_prepare._ca_subject }}"
+      ca_signing_algorithm: "{{ ipaserver_ca_signing_algorithm |
+                                default(omit) }}"
       #reverse_zones: "{{ result_ipaserver_prepare.reverse_zones }}"
       #no_reverse: "{{ ipaserver_no_reverse }}"
       #auto_forwarders: "{{ ipaserver_auto_forwarders }}"
-      #_http_ca_cert: "{{ result_ipaserver_test._http_ca_cert }}"
+      _http_ca_cert: "{{ result_ipaserver_test._http_ca_cert }}"
     register: result_ipaserver_setup_ca
 
   - name: Copy /root/ipa.csr to "{{ inventory_hostname }}-ipa.csr"
