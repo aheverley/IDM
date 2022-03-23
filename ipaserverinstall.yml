@@ -1,6 +1,6 @@
 ---
 - name: Playbook to configure IPA server
-  hosts: ipaserver
+  hosts: idm_servers
   become: true
 
   roles:
