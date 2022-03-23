@@ -1,6 +1,6 @@
 ---
 - name: Playbook to configure IPA replicas
-  hosts: ipareplicas
+  hosts: idm_replicas
   become: true
 
   roles:
