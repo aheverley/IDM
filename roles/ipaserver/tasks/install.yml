@@ -272,12 +272,12 @@
       domain: "{{ result_ipaserver_test.domain }}"
       realm: "{{ result_ipaserver_test.realm }}"
       hostname: "{{ result_ipaserver_test.hostname }}"
-      #no_host_dns: "{{ result_ipaserver_test.no_host_dns }}"
-      #pki_config_override: "{{ ipaserver_pki_config_override |
-      #                         default(omit) }}"
-      #setup_adtrust: "{{ result_ipaserver_test.setup_adtrust }}"
-      #setup_kra: "{{ result_ipaserver_test.setup_kra }}"
-      #setup_dns: "{{ ipaserver_setup_dns }}"
+      no_host_dns: "{{ result_ipaserver_test.no_host_dns }}"
+      pki_config_override: "{{ ipaserver_pki_config_override |
+                               default(omit) }}"
+      setup_adtrust: "{{ result_ipaserver_test.setup_adtrust }}"
+      setup_kra: "{{ result_ipaserver_test.setup_kra }}"
+      setup_dns: "{{ ipaserver_setup_dns }}"
       setup_ca: "{{ result_ipaserver_test.setup_ca }}"
       idstart: "{{ result_ipaserver_test.idstart }}"
       idmax: "{{ result_ipaserver_test.idmax }}"
@@ -298,9 +298,9 @@
       _ca_subject: "{{ result_ipaserver_prepare._ca_subject }}"
       ca_signing_algorithm: "{{ ipaserver_ca_signing_algorithm |
                                 default(omit) }}"
-      #reverse_zones: "{{ result_ipaserver_prepare.reverse_zones }}"
-      #no_reverse: "{{ ipaserver_no_reverse }}"
-      #auto_forwarders: "{{ ipaserver_auto_forwarders }}"
+      reverse_zones: "{{ result_ipaserver_prepare.reverse_zones }}"
+      no_reverse: "{{ ipaserver_no_reverse }}"
+      auto_forwarders: "{{ ipaserver_auto_forwarders }}"
       _http_ca_cert: "{{ result_ipaserver_test._http_ca_cert }}"
     register: result_ipaserver_setup_ca
 
